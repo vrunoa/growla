@@ -1,0 +1,17 @@
+<div>Hello Growla</div>
+<script src="../node_modules/jspdf/dist/jspdf.debug.js"></script>
+<script src="../lib/printer.js"></script>
+<script src="../lib/pdfbuilder.js"></script>
+<button onclick="printFile('./index.html')">Print</button>
+<button onclick="buildPDF()">Create ticket</button>
+<script>
+var pdf = new jsPDF('p', 'pt', 'letter');
+		pdf.html(document.getElementById('html'), {callback: function(pdf) {
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('style','position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
+                document.body.appendChild(iframe);
+                iframe.src = pdf.output('datauristring');
+            }
+			}
+        );
+</script>

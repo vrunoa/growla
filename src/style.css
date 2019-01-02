@@ -1,0 +1,34 @@
+@import url('fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf');
+@import url('fonts/Roboto_Condensed/RobotoCondensed-LightItalic.ttf');
+@import url('fonts/Roboto_Condensed/RobotoCondensed-Light.ttf');
+@import url('fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf');
+@import url('fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf');
+@import url('fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+
+body {
+  background-color: #1F2123;
+}
+
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#ticket {
+  visibility: hidden;
+  font-size: 0.5cm;
+}
+
+#title {
+  padding: 10px;
+  font-size: 2em;
+  color: white;
+}
+
+.button {
+  background-color: aliceblue;
+  color: #1F2123;
+  padding: 1em;
+  font-size: 1em;
+  border:none;
+  cursor: pointer;
+}

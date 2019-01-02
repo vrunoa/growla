@@ -1,19 +1,26 @@
-<div id="title">Growler Garage vol. 2</div>
-<link rel="stylesheet" href="./style.css" />
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-<script src="../node_modules/jspdf/dist/jspdf.debug.js"></script>
-<script src="../lib/printer.js"></script>
-<script src="../lib/pdfbuilder.js"></script>
-
-<button class="button" onclick="buildTicket('/Users/brunoalassia/Desktop/ticket.pdf')">Create ticket</button>
-<button class="button" onclick="printFile('/Users/brunoalassia/Desktop/ticket.pdf')">Print</button>
-
-<div id="ticket">
-  <p>Ticket nro. X</p>
-  <p>N pintas</p>
-  <p>N media pinta</p>
-  <p>N pinta especial</p>
-  <p>N aceitunas</p>
-  <p>Frisco yunke</p>
-  <p>Growler Garage vol.2</p>
-</div>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="../node_modules/jspdf/dist/jspdf.debug.js"></script>
+    <script src="../lib/controller.js"></script>
+  </head>
+  <body onload="controller.prepareTicket()">
+    <div id="title">Growler Garage vol. 2</div>
+    <div class="container">
+        <button class="button" onclick="controller.newTicket()" id="comandaBtt">Nueva comanda</button>
+        <div id="ticket_form">
+          <div class="form">
+            <select class="select" name="products" id="products">
+              <option value="-1">Seleccione un producto</option>
+            </select>
+            <select class="select" name="cant" id="cant"></select>
+            <button class="button" onclick="controller.addProduct()">Agregar</button>
+            <div id="ticket_content"></div>
+          </div>
+          <button class="button" onclick="controller.saveAndPrintTicket()">Guardar e Imprimir</button>
+          <button class="button" onclick="controller.cancelTicket()">Cancelar</button>
+        </div>
+    </div>    
+</bod>
+</html>
